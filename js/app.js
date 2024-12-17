@@ -11,10 +11,30 @@ const prev_btn = document.querySelector(".prev-btn");
 /* --------------- Sticky Navbar --------------- */
 
 /* --------------- Reveal Animation --------------- */
-let sr = ScrollReveal({ duration: 2500, distance: "60px" });
+let sr = ScrollReveal();
 
-sr.reveal(".showcase-info", { delay: 600 });
-sr.reveal(".showcase-image", { origin: "top", delay: 700 });
+sr.reveal(".showcase-info", { delay: 300, distance: "60px", duration: 1500 });
+sr.reveal(".showcase-image", {
+  origin: "top",
+  delay: 400,
+  distance: "60px",
+  duration: 1500,
+});
+
+sr.reveal(".about-info", { origin: "top", delay: 200, distance: "60px" });
+sr.reveal(".text-grid", { origin: "top", delay: 500, distance: "20px" });
+sr.reveal(".about-grid", { origin: "bottom", delay: 700, distance: "30px" });
+sr.reveal(".portfolio-title", {
+  origin: "bottom",
+  delay: 300,
+  distance: "30px",
+});
+sr.reveal(".filter-btns", { origin: "bottom", delay: 300, distance: "30px" });
+sr.reveal(".portfolio-gallery", {
+  origin: "bottom",
+  delay: 600,
+  distance: "300px",
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   var reg = document.getElementById("typed-element");
@@ -110,7 +130,7 @@ zoom_icons.forEach((ic, i) => {
 });
 
 modal_overlay.addEventListener("click", (event) => {
-  console.log('Target overlay: ', event.target.className);
+  console.log("Target overlay: ", event.target.className);
   if (
     event.target.className === "modal-overlay" ||
     event.target.className === "slider-wrap"
@@ -123,7 +143,7 @@ modal_overlay.addEventListener("click", (event) => {
 prev_btn.addEventListener("click", () => {
   console.log("currentIndex prev: ", currentIndex);
   if (currentIndex === 0) {
-    currentIndex = 4;
+    currentIndex = 1;
   } else {
     currentIndex--;
   }
@@ -132,7 +152,7 @@ prev_btn.addEventListener("click", () => {
 
 next_btn.addEventListener("click", () => {
   console.log("currentIndex next: ", currentIndex);
-  if (currentIndex === 4) {
+  if (currentIndex === 1) {
     currentIndex = 0;
   } else {
     currentIndex++;
@@ -141,16 +161,8 @@ next_btn.addEventListener("click", () => {
 });
 
 function changeImage(index) {
-  console.log('te current index real: ', index);
+  console.log("te current index real: ", index);
   images.forEach((img) => img.classList.remove("show-image"));
   console.log(images[index]);
   images[index].classList.add("show-image");
 }
-
-/* --------------- Modal Pop Up Animation Animation --------------- */
-
-/* --------------- Change Active Link On Scroll --------------- */
-
-/* --------------- Change Page Theme --------------- */
-
-/* --------------- Open & Close Navbar Menu --------------- */
