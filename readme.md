@@ -14,6 +14,8 @@ The project is organized as follows:
 
 ├── js/ `Contains JavaScript files for interactivity`
 
+├── projects/ `Contains HTML files for each project description`
+
 ├── index.html `Main HTML file of the portfolio website`
 
 ├── 404.html `404 HTML file When page not found`
