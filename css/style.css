@@ -246,7 +246,7 @@ nav.container {
 
 /* --------------- Showcase Area Styling --------------- */
 .showcase-area {
-  padding: var(--header-height) 0;
+  padding: var(--header-height) 0 var(--section-padding) 0;
   width: 100%;
   overflow: hidden;
 }
@@ -453,7 +453,7 @@ nav.container {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: 15px solid #e2e6ed;
+  border: 15px solid #cecece;
   border-radius: 50%;
   z-index: -1;
 
@@ -508,6 +508,8 @@ nav.container {
   cursor: pointer;
   font-family: inherit;
   text-transform: uppercase;
+}
+.filter-btn:not(:nth-child(1)) {
   margin-left: 1.3rem;
 }
 
@@ -719,21 +721,26 @@ footer .social-media {
   color: var(--bg-color-2)
 }
 
-
-
-/* Breakpoints */
-/* $grid-breakpoints-xs: 0;
-$grid-breakpoints-sm: 576px;
-$grid-breakpoints-md: 768px;
-$grid-breakpoints-lg: 992px;
-$grid-breakpoints-xl: 1200px;
-$grid-breakpoints-xxl: 1600px; */
-
 /* ************************ MEDIA QUERIES ************************ */
 
 
 /* --------------- 1000px Screens --------------- */
 
+@media (min-width: 1600px) {
+  :root {
+    --hue-1: 193;
+    --hue-2: 47;
+    --main-color-1: #323d46;
+    --main-color-dark-1: #595d61;
+    --main-color-2: #ffd438;
+    --main-color-dark-2: #eac22e;
+    --section-padding: 12em;
+    --smooth-blue: #171f21;
+    --strong-blue: #7586a2;
+    --header-height: 3.5rem;
+    
+  }
+}
 @media (min-width: 1071px) {
   nav.container {
     height: calc(var(--header-height) + 2rem);
@@ -877,9 +884,10 @@ $grid-breakpoints-xxl: 1600px; */
     color: var(--bg-color-2);
   }
 
-  .section {
-    padding: 3rem 0;
+  :root {
+    --section-padding: 5rem;
   }
+
 
   /* About section */
   .about .container {
@@ -895,10 +903,27 @@ $grid-breakpoints-xxl: 1600px; */
     grid-column: 1;
     grid-row: 1;
   }
+
+  footer .container {
+    flex-direction: column;
+  }
+
+  footer .logo {
+    margin: 0px !important;
+  }
 }
 
 @media (max-width: 480px) {
   .showcase-image .person {
     width: 65%;
+  }
+
+  .portfolio-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .slider-wrap {
+    grid-template-columns: 30px 1fr 30px;
+    width: 100%;
   }
 }
