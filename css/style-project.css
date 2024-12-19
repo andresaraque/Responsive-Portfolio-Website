@@ -78,6 +78,19 @@
   opacity: 1;
 }
 
+.text-tooltip-sm {
+  margin-top: 3px;
+  font-size: 0.7rem;
+  font-weight: 100;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.text-tooltip-sm .icon-tooltip {
+  margin-right: 5px;
+  color: var(--main-color-dark-2);
+}
+
 @media (max-width: 768px) {
   .wrapper-project, .pj-details {
     grid-template-columns: 1fr;
@@ -88,5 +101,9 @@
 @media (max-width: 576px) {
   .pj-details img {
     width: 90%;
+  }
+
+  .text-tooltip-sm {
+    opacity: 1;
   }
 }
