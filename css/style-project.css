@@ -22,6 +22,10 @@
   gap: 3rem;
 }
 
+.logo {
+  color: var(--smooth-blue);
+}
+
 @media (max-width: 768px) {
   .wrapper-project {
     grid-template-columns: 1fr;
