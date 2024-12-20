@@ -87,8 +87,14 @@
   color: var(--main-color-dark-2);
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
+  .wrapper-project {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
 
+@media (max-width: 576px) {
   .text-tooltip-sm {
     opacity: 1;
   }
