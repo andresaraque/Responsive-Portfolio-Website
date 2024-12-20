@@ -554,7 +554,6 @@ nav.container {
   font-size: .95rem;
   color: var(--heading-color);
   font-weight: 600;
-  text-transform: capitalize;
 }
 .btn.secondary-btn.sm {
   padding: 0.07rem 0.1rem;
