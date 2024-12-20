@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Andres Araque - Portfolio Website</title>
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+    <link rel="stylesheet" href="./../css/style.css" />
+    <link rel="stylesheet" href="./../css/style-project.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./../assets/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./../assets/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./../assets/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./../assets/site.webmanifest" />
+  </head>
+  <body>
+    <header class="scrolled">
+      <!-- --------- Navbar --------- -->
+      <nav class="container">
+        <div class="nav-data">
+          <a href="./../index.html" class="logo" id="principal-logo">A_A</a>
+
+          <div class="nav-toggle" id="nav-toggle">
+            <i
+              class="uil uil-list-ul nav-burger common-icon change-color-icon"
+            ></i>
+            <i
+              class="uil uil-multiply nav-close common-icon change-color-icon"
+            ></i>
+          </div>
+        </div>
+
+        <div class="nav-menu" id="nav-menu">
+          <ul class="nav-list">
+            <li><a href="./../index.html" class="nav-link">Home</a></li>
+            <li>
+              <a href="./../index.html#about-nav" class="nav-link">About</a>
+            </li>
+            <li>
+              <a href="./../index.html#portfolio-nav" class="nav-link"
+                >Portfolio</a
+              >
+            </li>
+          </ul>
+          <!-- <i class="uil uil-moon toggle-btn"></i> -->
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        <div style="padding-top: var(--section-padding)">
+          <h1 class="heading title-pj">Bank of Occidente</h1>
+          <div class="wrapper-project">
+            <div class="container-img">
+              <img
+                src="./../assets/port3.png"
+                alt="Image of Rate Upload and Acquisition Mechanism project"
+              />
+            </div>
+            <div class="project-info">
+              <h1 class="heading">Rate Upload and Acquisition Mechanism</h1>
+              <p class="text">
+                Developed a system for the Bank of Occidente to enable specific
+                departments to upload Excel files containing interest rates,
+                customer profiles, and product types (e.g., housing loans,
+                personal loans, vehicle loans). The system validates the file
+                format using Python, converts it to CSV, and stores the rates in
+                an AWS DynamoDB database in batch operations, optimizing the
+                process for large-scale data uploads.
+              </p>
+              <p class="text">
+                Additionally, the system provides an API to allow other products
+                or services to consume the stored data dynamically, retrieving
+                the specific rate sets based on product type.
+              </p>
+              <p class="text">
+                If the process completes successfully, the system sends a
+                notification via AWS SNS topics to relevant stakeholders. In
+                case of errors during validation or processing, error
+                notifications are sent via the same mechanism.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="div">
+          <h3 class="sub-heading">technologies:</h3>
+          <img
+            src="https://img.shields.io/badge/Python-171f21?style=flat&logo=python"
+            alt="Badge of Python"
+          />
+          <img
+            src="https://img.shields.io/badge/Typescript-171f21?style=flat&logo=typescript"
+            alt="Badge of typescript"
+          />
+          <img
+            src="https://img.shields.io/badge/Node.js-171f21?style=flat&logo=node.js"
+            alt="Badge of Nodejs"
+          />
+          <img
+            src="https://img.shields.io/badge/Swagger-OpenAPI-171f21?style=flat&logo=swagger"
+            alt="Badge of openAPI"
+          />
+          <img
+            src="https://img.shields.io/badge/AWS%20Cloud%20Services-171f21?style=flat&logo=amazonwebservices&logoColor=%23FF9900"
+            alt="Badge of AWS"
+          />
+          <img
+            src="https://img.shields.io/badge/Terraform-171f21?style=flat&logo=terraform"
+            alt="Badge of AWS"
+          />
+        </div>
+        <div style="margin-top: 2.5rem">
+          <h3 class="sub-heading">AWS Services:</h3>
+          <img
+            src="https://img.shields.io/badge/S3-Bucket-171f21?style=flat&logo=amazons3"
+            alt="Badge of S3"
+          />
+          <img
+            src="https://img.shields.io/badge/Lambda-171f21?style=flat&logo=awslambda"
+            alt="Badge of Lamda"
+          />
+          <img
+            src="https://img.shields.io/badge/SQS-171f21?style=flat&logo=amazonsqs"
+            alt="Badge of SQS"
+          />
+          <img
+                src="https://img.shields.io/badge/SNS-171f21?style=flat&logo=amazonwebservices&logoColor=%23FF9900"
+                alt="Badge of SNS"
+              />
+          <img
+            src="https://img.shields.io/badge/DynamoDB-171f21?style=flat&logo=amazondynamodb"
+            alt="Badge of DynamoDB"
+          />
+          <img
+            src="https://img.shields.io/badge/APIGateway-171f21?style=flat&logo=amazonapigateway"
+            alt="Badge of ApiGateWay"
+          />
+          <img
+            src="https://img.shields.io/badge/Cloudwatch-171f21?style=flat&logo=amazoncloudwatch"
+            alt="Badge of Cloudwatch"
+          />
+          <img
+            src="https://img.shields.io/badge/StepFunction-171f21?style=flat&logo=amazonwebservices&logoColor=%23FF9900"
+            alt="Badge of StepFunction"
+          />
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <a href="./../index.html" class="logo" id="principal-logo">A_A</a>
+        <p class="text">
+          &copy; Copyright 2024. Developed with ❤️ by Andres Araque
+        </p>
+        <ul class="social-media">
+          <li>
+            <a
+              href="https://api.whatsapp.com/send?phone=573217207734"
+              target="_blank"
+              class="social-link"
+            >
+              <i class="uil uil-whatsapp"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/andresaraque"
+              target="_blank"
+              class="social-link"
+            >
+              <i class="uil uil-github"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <script src="./../js/app-project.js"></script>
+  </body>
+</html>

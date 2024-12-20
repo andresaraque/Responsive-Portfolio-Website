@@ -152,7 +152,7 @@ prev_btn.addEventListener("click", () => {
 
 next_btn.addEventListener("click", () => {
   console.log("currentIndex next: ", currentIndex);
-  if (currentIndex === 1) {
+  if (currentIndex === 2) {
     currentIndex = 0;
   } else {
     currentIndex++;
