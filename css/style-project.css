@@ -5,7 +5,6 @@
 .container-img {
   position: relative;
   max-width: 800px;
-  margin-top: 3rem;
 }
 .container-img img {
   width: 100%;
@@ -89,8 +88,13 @@
 
 @media (max-width: 768px) {
   .wrapper-project {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto !important;
     gap: 3rem;
+  }
+
+  .wrapper-project .project-info {
+    grid-area: auto !important;
   }
 }
 
