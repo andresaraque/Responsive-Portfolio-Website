@@ -902,6 +902,9 @@ footer .social-media li:not(:nth-child(1)) {
   .showcase-info {
     text-align: center;
   }
+  .showcase-info .text {
+    min-height: 74px;
+  }
   .cta {
     justify-content: center;
   }
