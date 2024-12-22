@@ -481,7 +481,17 @@ nav.container {
 
 /* --------------- Skills Section Styling --------------- */
 
-/* --------------- Sevices Section Styling --------------- */
+.skills-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: var(--header-height);
+}
+
+.skill-section .heading {
+  margin-bottom: 1.25rem;
+  width: fit-content;
+}
 
 /* --------------- Portfolio Section Styling --------------- */
 .portfolio .container {
@@ -714,7 +724,7 @@ footer .social-media {
   display: flex;
 }
 
-footer .social-media li:nth-child(2) {
+footer .social-media li:not(:nth-child(1)) {
   margin-left: 1rem;
 }
 .social-link {
@@ -917,6 +927,10 @@ footer .social-media li:nth-child(2) {
   .about-info {
     grid-column: 1;
     grid-row: 1;
+  }
+
+  .skills-content {
+    grid-template-columns: 1fr;
   }
 
   footer .container {

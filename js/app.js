@@ -24,6 +24,7 @@ sr.reveal(".showcase-image", {
 sr.reveal(".about-info", { origin: "top", delay: 200, distance: "60px" });
 sr.reveal(".text-grid", { origin: "top", delay: 500, distance: "20px" });
 sr.reveal(".about-grid", { origin: "bottom", delay: 700, distance: "30px" });
+sr.reveal(".skill-section", { origin: "bottom", delay: 300, distance: "30px" });
 sr.reveal(".portfolio-title", {
   origin: "bottom",
   delay: 300,
@@ -101,10 +102,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   window.addEventListener("scroll", stickyNavbar);
 });
-
-/* --------------- Skills Progress Bar Animation --------------- */
-
-/* --------------- Services Counter Animation --------------- */
 
 /* --------------- Portfolio Filter Animation --------------- */
 let mixer = mixitup(".portfolio-gallery", {
