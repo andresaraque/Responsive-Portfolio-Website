@@ -17,6 +17,10 @@
   --header-height: 3.5rem;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   --bg-color: #ebeaea;
   --bg-color-1: hsl(var(--hue-1), 100%, 95.5%);
