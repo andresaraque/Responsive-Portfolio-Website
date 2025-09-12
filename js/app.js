@@ -37,6 +37,21 @@ sr.reveal(".portfolio-gallery", {
   distance: "300px",
 });
 
+// Education section animations
+sr.reveal(".education-card:nth-child(1)", {
+  origin: "left",
+  delay: 200,
+  distance: "60px",
+  duration: 1000,
+});
+
+sr.reveal(".education-card:nth-child(2)", {
+  origin: "right",
+  delay: 400,
+  distance: "60px",
+  duration: 1000,
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   var reg = document.getElementById("typed-element");
 
