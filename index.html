@@ -20,6 +20,7 @@
 
     <!-- --------- CSS Files --------- -->
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/i18n.css" />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -55,11 +56,37 @@
 
         <div class="nav-menu" id="nav-menu">
           <ul class="nav-list">
-            <li><a href="./index.html" class="nav-link">Home</a></li>
-            <li><a href="#about-nav" class="nav-link">About</a></li>
-            <li><a href="#skills-nav" class="nav-link">Skills</a></li>
-            <li><a href="#education-nav" class="nav-link">Education</a></li>
-            <li><a href="#portfolio-nav" class="nav-link">Portfolio</a></li>
+            <li>
+              <a href="./index.html" class="nav-link" data-i18n="nav.home"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a href="#about-nav" class="nav-link" data-i18n="nav.about"
+                >About</a
+              >
+            </li>
+            <li>
+              <a href="#skills-nav" class="nav-link" data-i18n="nav.skills"
+                >Skills</a
+              >
+            </li>
+            <li>
+              <a
+                href="#education-nav"
+                class="nav-link"
+                data-i18n="nav.education"
+                >Education</a
+              >
+            </li>
+            <li>
+              <a
+                href="#portfolio-nav"
+                class="nav-link"
+                data-i18n="nav.portfolio"
+                >Portfolio</a
+              >
+            </li>
           </ul>
         </div>
       </nav>
@@ -70,30 +97,32 @@
       <section class="showcase-area">
         <div class="container">
           <div class="showcase-info">
-            <h3 class="sub-heading">Hi, I'm Andres Araque</h3>
-            <h1 class="heading">JavaScript Developer</h1>
-            <p class="text" id="typed-element"></p>
+            <h3 class="sub-heading" data-i18n="hero.greeting">
+              Hi, I'm Andres Araque
+            </h3>
+            <h1 class="heading" data-i18n="hero.title">JavaScript Developer</h1>
+            <p class="text" id="typed-element" data-i18n="hero.description">
+              Building the future, one line of code at a time.
+            </p>
             <div class="cta">
               <a
                 href="https://api.whatsapp.com/send?phone=573217207734"
                 target="_blank"
                 class="btn"
+                data-i18n="hero.cta.whatsapp"
                 ><i class="uil uil-whatsapp"></i> Text me</a
               >
               <a
                 href="mailto:andresaraque24dos@gmail.com?subject=Contact%20From%20Portfolio&body=Hello%20Andres,"
                 class="btn secondary-btn"
+                data-i18n="hero.cta.email"
               >
                 <i class="uil uil-envelope"></i> Send Email
               </a>
             </div>
           </div>
           <div class="showcase-image">
-            <img
-              src="./assets/me.png"
-              class="person"
-              alt="Andres Araque image"
-            />
+            <img src="./assets/me.png" class="person" alt="Andres Araque" />
           </div>
         </div>
       </section>
@@ -108,19 +137,23 @@
                 <i class="uil uil-brackets-curly"></i>
                 <i class="uil uil-bug"></i>
               </div>
-              <h3>Feature/Bug</h3>
+              <h3 data-i18n="about.workflow.featureBug">Feature/Bug</h3>
             </div>
 
             <div class="about-card">
               <div class="number-card">2</div>
               <i class="uil uil-cloud-upload"></i>
-              <h3>Develop Environment</h3>
+              <h3 data-i18n="about.workflow.developEnvironment">
+                Develop Environment
+              </h3>
             </div>
 
             <div class="about-card">
               <div class="number-card">4</div>
               <i class="uil uil-user-check"></i>
-              <h3>Production (Go Live)</h3>
+              <h3 data-i18n="about.workflow.production">
+                Production (Go Live)
+              </h3>
             </div>
 
             <div class="about-card">
@@ -131,9 +164,13 @@
             <div class="content-center">CI/CD</div>
           </div>
           <div class="about-info">
-            <h3 class="sub-heading">Get to Know Me</h3>
-            <h1 class="heading">Creative, Curious, Fearless Innovator</h1>
-            <p class="text">
+            <h3 class="sub-heading" data-i18n="about.subtitle">
+              Get to Know Me
+            </h3>
+            <h1 class="heading" data-i18n="about.title">
+              Creative, Curious, Fearless Innovator
+            </h1>
+            <p class="text" data-i18n="about.description">
               I am a passionate creator driven by curiosity and a love for
               innovation. I specialize in designing and developing dynamic,
               interactive web applications, with expertise covering
@@ -141,7 +178,9 @@
             </p>
           </div>
           <div class="text-grid">
-            <h3 class="heading">My Development Workflow</h3>
+            <h3 class="heading" data-i18n="about.workflow.title">
+              My Development Workflow
+            </h3>
           </div>
         </div>
       </section>
@@ -149,10 +188,10 @@
       <!-- --------- Skills Section --------- -->
       <section class="section" id="skills-nav">
         <div class="container">
-          <h3 class="sub-heading">Skills</h3>
+          <h3 class="sub-heading" data-i18n="skills.subtitle">Skills</h3>
           <div class="skills-content">
             <div class="skill-section">
-              <h1 class="heading">Languages</h1>
+              <h1 class="heading" data-i18n="skills.languages">Languages</h1>
               <img
                 src="https://img.shields.io/badge/Javascript-171f21?style=for-the-badge&logo=javascript"
                 alt="Badge of Javascript"
@@ -167,7 +206,7 @@
               />
             </div>
             <div class="skill-section">
-              <h1 class="heading">Frontend</h1>
+              <h1 class="heading" data-i18n="skills.frontend">Frontend</h1>
               <img
                 src="https://img.shields.io/badge/HTML5-171f21?style=for-the-badge&logo=HTML5"
                 alt="Badge of HTML5"
@@ -190,7 +229,7 @@
               />
             </div>
             <div class="skill-section">
-              <h1 class="heading">Backend</h1>
+              <h1 class="heading" data-i18n="skills.backend">Backend</h1>
               <img
                 src="https://img.shields.io/badge/Node.js-171f21?style=for-the-badge&logo=node.js"
                 alt="Badge of Node.js"
@@ -205,7 +244,7 @@
               />
             </div>
             <div class="skill-section">
-              <h1 class="heading">Database</h1>
+              <h1 class="heading" data-i18n="skills.database">Database</h1>
               <img
                 src="https://img.shields.io/badge/SQL-171f21?style=for-the-badge&logo=postgresql"
                 alt="Badge of SQL"
@@ -220,7 +259,9 @@
               />
             </div>
             <div class="skill-section">
-              <h1 class="heading">Infrastructure</h1>
+              <h1 class="heading" data-i18n="skills.infrastructure">
+                Infrastructure
+              </h1>
               <img
                 src="https://img.shields.io/badge/AWS%20Cloud%20Services-171f21?style=for-the-badge&logo=amazonwebservices&logoColor=%23FF9900"
                 alt="Badge of AWS"
@@ -231,7 +272,9 @@
               />
             </div>
             <div class="skill-section">
-              <h1 class="heading">Version Control</h1>
+              <h1 class="heading" data-i18n="skills.versionControl">
+                Version Control
+              </h1>
               <img
                 src="https://img.shields.io/badge/Git-171f21?style=for-the-badge&logo=git"
                 alt="Badge of Git"
@@ -244,8 +287,10 @@
       <!-- --------- Education Section --------- -->
       <section class="education section" id="education-nav">
         <div class="container">
-          <h3 class="sub-heading">Education</h3>
-          <h1 class="heading">Complementary Studies</h1>
+          <h3 class="sub-heading" data-i18n="education.subtitle">Education</h3>
+          <h1 class="heading" data-i18n="education.title">
+            Complementary Studies
+          </h1>
           <div class="education-content">
             <div class="education-card">
               <div class="education-image">
@@ -255,23 +300,42 @@
                 />
               </div>
               <div class="education-info">
-                <h3 class="education-title">
-                  Diplomado en Arquitectura de Software y Cloud Computing
+                <h3 class="education-title" data-i18n="education.diploma.title">
+                  Software Architecture and Cloud Computing
                 </h3>
-                <p class="education-institution">
-                  Pontificia Universidad Javeriana Cali
+                <p
+                  class="education-institution"
+                  data-i18n="education.diploma.institution"
+                >
+                  At Pontificia Universidad Javeriana Cali
                 </p>
-                <p class="education-duration">May 2025 - July 2025</p>
-                <p class="education-description">
+                <p
+                  class="education-duration"
+                  data-i18n="education.diploma.duration"
+                >
+                  May 2025 - July 2025
+                </p>
+                <p
+                  class="education-description"
+                  data-i18n="education.diploma.description"
+                >
                   A specialized 120-hour online program focused on the design of
                   scalable software architectures and the use of cloud computing
                   technologies.
                 </p>
                 <div class="education-skills">
-                  <span class="skill-tag">Software Architecture</span>
-                  <span class="skill-tag">Cloud Computing</span>
-                  <span class="skill-tag">AWS</span>
-                  <span class="skill-tag">Architectural styles</span>
+                  <span class="skill-tag" data-i18n="education.diploma.skills.0"
+                    >Software Architecture</span
+                  >
+                  <span class="skill-tag" data-i18n="education.diploma.skills.1"
+                    >Cloud Computing</span
+                  >
+                  <span class="skill-tag" data-i18n="education.diploma.skills.2"
+                    >AWS</span
+                  >
+                  <span class="skill-tag" data-i18n="education.diploma.skills.3"
+                    >Architectural styles</span
+                  >
                 </div>
               </div>
             </div>
@@ -284,23 +348,40 @@
                 />
               </div>
               <div class="education-info">
-                <h3 class="education-title">
+                <h3 class="education-title" data-i18n="education.icagile.title">
                   ICAgile Certified Professional (ICP)
                 </h3>
-                <p class="education-institution">
+                <p
+                  class="education-institution"
+                  data-i18n="education.icagile.institution"
+                >
                   International Consortium for Agile (ICAgile)
                 </p>
-                <p class="education-duration">April 2022</p>
-                <p class="education-description">
+                <p
+                  class="education-duration"
+                  data-i18n="education.icagile.duration"
+                >
+                  April 2022
+                </p>
+                <p
+                  class="education-description"
+                  data-i18n="education.icagile.description"
+                >
                   International certification that validates competencies in
                   agile methodologies. It demonstrates the ability to act as an
                   agile professional with fundamental knowledge of agile
                   principles and practices.
                 </p>
                 <div class="education-skills">
-                  <span class="skill-tag">Agile Methodologies</span>
-                  <span class="skill-tag">Scrum</span>
-                  <span class="skill-tag">Team Collaboration</span>
+                  <span class="skill-tag" data-i18n="education.icagile.skills.0"
+                    >Agile Methodologies</span
+                  >
+                  <span class="skill-tag" data-i18n="education.icagile.skills.1"
+                    >Scrum</span
+                  >
+                  <span class="skill-tag" data-i18n="education.icagile.skills.2"
+                    >Team Collaboration</span
+                  >
                 </div>
               </div>
             </div>
@@ -340,14 +421,31 @@
         <div class="container">
           <div class="portfolio-header">
             <div class="portfolio-title">
-              <h3 class="sub-heading">Portfolio</h3>
-              <h1 class="heading">Latest Projects</h1>
+              <h3 class="sub-heading" data-i18n="portfolio.subtitle">
+                Portfolio
+              </h3>
+              <h1 class="heading" data-i18n="portfolio.title">
+                Latest Projects
+              </h1>
             </div>
             <div class="filter-btns">
-              <button class="filter-btn" data-filter="all">All</button
-              ><button class="filter-btn" data-filter=".frontend">
+              <button
+                class="filter-btn"
+                data-filter="all"
+                data-i18n="portfolio.filters.all"
+              >
+                All</button
+              ><button
+                class="filter-btn"
+                data-filter=".frontend"
+                data-i18n="portfolio.filters.frontend"
+              >
                 Frontend</button
-              ><button class="filter-btn" data-filter=".backend">
+              ><button
+                class="filter-btn"
+                data-filter=".backend"
+                data-i18n="portfolio.filters.backend"
+              >
                 Backend
               </button>
             </div>
@@ -373,8 +471,13 @@
                 </div>
               </div>
               <div class="prt-desc">
-                <h3>Online Personal Loan Application</h3>
-                <a href="./projects/pj1.html" class="btn secondary-btn sm"
+                <h3 data-i18n="portfolio.projects.loan.title">
+                  Online Personal Loan Application
+                </h3>
+                <a
+                  href="./projects/pj1.html"
+                  class="btn secondary-btn sm"
+                  data-i18n="portfolio.projects.loan.readMore"
                   >Read more</a
                 >
               </div>
@@ -399,9 +502,15 @@
                 </div>
               </div>
               <div class="prt-desc">
-                <h3>Common OTP Service for Authentication</h3>
-                <a href="./projects/pj2.html" class="btn secondary-btn sm"
+                <h3 data-i18n="portfolio.projects.otp.title">
+                  Common OTP Service for Authentication
+                </h3>
+                <a
+                  href="./projects/pj2.html"
+                  class="btn secondary-btn sm"
+                  data-i18n="portfolio.projects.otp.readMore"
                   >Read more</a
+                >
                 >
               </div>
             </div>
@@ -425,8 +534,13 @@
                 </div>
               </div>
               <div class="prt-desc">
-                <h3>Rates Upload and Acquisition Mechanism</h3>
-                <a href="./projects/pj3.html" class="btn secondary-btn sm"
+                <h3 data-i18n="portfolio.projects.rates.title">
+                  Rates Upload and Acquisition Mechanism
+                </h3>
+                <a
+                  href="./projects/pj3.html"
+                  class="btn secondary-btn sm"
+                  data-i18n="portfolio.projects.rates.readMore"
                   >Read more</a
                 >
               </div>
@@ -439,13 +553,33 @@
       <!-- --------- Contact Section --------- -->
 
       <!-- --------- Subscription Section --------- -->
+      <!-- <button class="floating-btn" id="langBtn">🌐</button> -->
+
+      <div class="lan-fixed">
+        <div class="language-selector">
+          <button class="lang-btn" id="lang-btn">
+            <i class="uil uil-globe"></i>
+            <span data-i18n="language.selector">Language</span>
+          </button>
+          <div class="lang-dropdown" id="lang-dropdown">
+            <button class="lang-option" data-lang="en">
+              <span class="flag">🇺🇸</span>
+              <span data-i18n="language.english">English</span>
+            </button>
+            <button class="lang-option" data-lang="es">
+              <span class="flag">🇪🇸</span>
+              <span data-i18n="language.spanish">Español</span>
+            </button>
+          </div>
+        </div>
+      </div>
     </main>
 
     <!-- --------- Footer --------- -->
     <footer>
       <div class="container">
         <a href="./index.html" class="logo" id="principal-logo">A_A</a>
-        <p class="text">
+        <p class="text" data-i18n="footer.copyright">
           &copy; Copyright 2024. Developed with ❤️ by Andres Araque
         </p>
         <ul class="social-media">
@@ -485,6 +619,7 @@
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <script src="./js/mixitup.min.js"></script>
+    <script src="./js/i18n.js"></script>
     <script src="./js/app.js"></script>
   </body>
 </html>

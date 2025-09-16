@@ -394,7 +394,6 @@ nav.container {
 }
 .about-card i {
   font-size: 50px;
-  /* font-size: 30px; */
   color: var(--bg-color-2);
   transition: 0.3s;
 }
@@ -744,7 +743,7 @@ nav.container {
   padding: 0.07rem 0.1rem;
   font-size: 0.78rem;
   border-bottom-width: 2px;
-  min-width: 73px;
+  min-width: fit-content;
 }
 
 .btn.secondary-btn.sm::before {

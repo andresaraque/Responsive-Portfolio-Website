@@ -1,0 +1,102 @@
+{
+  "meta": {
+    "title": "Andres Araque - Portfolio Website",
+    "description": "JavaScript Developer specializing in web applications, cloud computing, and software architecture. View my projects and experience."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "education": "Education",
+    "portfolio": "Portfolio"
+  },
+  "hero": {
+    "greeting": "Hi, I'm Andres Araque",
+    "title": "JavaScript Developer",
+    "description": "Building the future, one line of code at a time.",
+    "message1": "Innovating with purpose, developing with passion.",
+    "message2": "Turning visions into reality through clean code.",
+    "cta": {
+      "whatsapp": "Text me",
+      "email": "Send Email"
+    }
+  },
+  "about": {
+    "subtitle": "Get to Know Me",
+    "title": "Creative, Curious, Fearless Innovator",
+    "description": "I am a passionate creator driven by curiosity and a love for innovation. I specialize in designing and developing dynamic, interactive web applications, with expertise covering infrastructure, backend, and frontend development.",
+    "workflow": {
+      "title": "My Development Workflow",
+      "featureBug": "Feature/Bug",
+      "developEnvironment": "Develop Environment",
+      "production": "Production (Go Live)",
+      "testingEnvironment": "Testing Environment",
+      "ciCd": "CI/CD"
+    }
+  },
+  "skills": {
+    "subtitle": "Skills",
+    "languages": "Languages",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "database": "Database",
+    "infrastructure": "Infrastructure",
+    "versionControl": "Version Control"
+  },
+  "education": {
+    "subtitle": "Education",
+    "title": "Complementary Studies",
+    "diploma": {
+      "title": "Software Architecture and Cloud Computing",
+      "institution": "Pontificia Universidad Javeriana Cali",
+      "duration": "May 2025 - July 2025",
+      "description": "A specialized 120-hour online program focused on the design of scalable software architectures and the use of cloud computing technologies.",
+      "skills": ["Software Architecture", "Cloud Computing", "AWS", "Architectural styles"]
+    },
+    "icagile": {
+      "title": "ICAgile Certified Professional (ICP)",
+      "institution": "International Consortium for Agile (ICAgile)",
+      "duration": "April 2022",
+      "description": "International certification that validates competencies in agile methodologies. It demonstrates the ability to act as an agile professional with fundamental knowledge of agile principles and practices.",
+      "skills": ["Agile Methodologies", "Scrum", "Team Collaboration"]
+    }
+  },
+  "portfolio": {
+    "subtitle": "Portfolio",
+    "title": "Latest Projects",
+    "filters": {
+      "all": "All",
+      "frontend": "Frontend",
+      "backend": "Backend"
+    },
+    "projects": {
+      "loan": {
+        "title": "Online Personal Loan Application",
+        "description": "I contributed to the development of this innovative web application, which allows users to apply for a personal loan.",
+        "readMore": "Read more"
+      },
+      "otp": {
+        "title": "OTP Generation and Validation Service",
+        "description": "Developed a robust One-Time Password (OTP) generation and validation service for secure client authentication at Banco de Occidente.",
+        "readMore": "Read more"
+      },
+      "rates": {
+        "title": "Rate Upload and Acquisition Mechanism",
+        "description": "Developed a system for the Bank of Occidente to enable specific departments to upload Excel files containing interest rates, customer profiles, and product types.",
+        "readMore": "Read more"
+      }
+    },
+    "cta": {
+      "visit": "Visit Website",
+      "readMore": "Read more"
+    }
+  },
+  "footer": {
+    "copyright": "© Copyright 2024. Developed with ❤️ by Andres Araque"
+  },
+  "language": {
+    "selector": "Language",
+    "english": "English",
+    "spanish": "Español"
+  }
+}
