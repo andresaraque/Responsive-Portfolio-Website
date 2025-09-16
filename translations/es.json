@@ -1,0 +1,102 @@
+{
+  "meta": {
+    "title": "Andres Araque - Portafolio Web",
+    "description": "Desarrollador JavaScript especializado en aplicaciones web, computación en la nube y arquitectura de software. Mira mis proyectos y experiencia."
+  },
+  "nav": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "skills": "Habilidades",
+    "education": "Educación",
+    "portfolio": "Portafolio"
+  },
+  "hero": {
+    "greeting": "Hola, soy Andres Araque",
+    "title": "Desarrollador JavaScript",
+    "description": "Construyendo el futuro, una línea de código a la vez.",
+    "message1": "Innovando con propósito, desarrollando con pasión.",
+    "message2": "Convirtiendo visiones en realidad a través de código limpio.",
+    "cta": {
+      "whatsapp": "Escríbeme",
+      "email": "Enviar Email"
+    }
+  },
+  "about": {
+    "subtitle": "Conóceme",
+    "title": "Creador, Curioso e Innovador",
+    "description": "Soy un Desarrollador apasionado impulsado por la curiosidad y el amor por la innovación. Me especializo en diseñar y desarrollar aplicaciones web dinámicas e interactivas, con experiencia que cubre infraestructura, backend y desarrollo frontend.",
+    "workflow": {
+      "title": "Mi Flujo de Trabajo",
+      "featureBug": "Feature/Bug",
+      "developEnvironment": "Desarrollo",
+      "production": "Producción (Go Live)",
+      "testingEnvironment": "Pruebas",
+      "ciCd": "CI/CD"
+    }
+  },
+  "skills": {
+    "subtitle": "Habilidades",
+    "languages": "Lenguajes",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "database": "Base de Datos",
+    "infrastructure": "Infraestructura",
+    "versionControl": "Control de Versiones"
+  },
+  "education": {
+    "subtitle": "Educación",
+    "title": "Estudios Complementarios",
+    "diploma": {
+      "title": "Diplomado en Arquitectura de Software y Cloud Computing",
+      "institution": "Pontificia Universidad Javeriana Cali",
+      "duration": "Mayo 2025 - Julio 2025",
+      "description": "Programa especializado de 120 horas en modalidad virtual, enfocado en el diseño de arquitecturas de software escalables y el uso de tecnologías de computación en la nube.",
+      "skills": ["Arquitectura de Software", "Computación en la nube", "AWS", "Estilos Arquitectónicos"]
+    },
+    "icagile": {
+      "title": "ICAgile Certified Professional (ICP)",
+      "institution": "International Consortium for Agile (ICAgile)",
+      "duration": "Abril 2022",
+      "description": "Certificación internacional que valida las competencias en metodologías ágiles. Demuestra la capacidad para actuar como profesional ágil con conocimientos fundamentales en principios y prácticas ágiles.",
+      "skills": ["Metodologías Ágiles", "Scrum", "Colaboración en Equipo"]
+    }
+  },
+  "portfolio": {
+    "subtitle": "Portafolio",
+    "title": "Proyectos Recientes",
+    "filters": {
+      "all": "Todos",
+      "frontend": "Frontend",
+      "backend": "Backend"
+    },
+    "projects": {
+      "loan": {
+        "title": "Aplicación Web de Préstamos Personales",
+        "description": "Contribuí al desarrollo de esta innovadora aplicación web, que permite a los usuarios solicitar un préstamo personal.",
+        "readMore": "Leer más"
+      },
+      "otp": {
+        "title": "Servicio de Generación y Validación OTP",
+        "description": "Desarrollé un servicio robusto de generación y validación de contraseñas de un solo uso (OTP) para autenticación segura de clientes en Banco de Occidente.",
+        "readMore": "Leer más"
+      },
+      "rates": {
+        "title": "Mecanismo de Carga y Adquisición de Tasas",
+        "description": "Desarrollé un sistema para el Banco de Occidente que permite a departamentos específicos cargar archivos Excel con tasas de interés, perfiles de clientes y tipos de productos.",
+        "readMore": "Leer más"
+      }
+    },
+    "cta": {
+      "visit": "Visitar Sitio Web",
+      "readMore": "Leer más"
+    }
+  },
+  "footer": {
+    "copyright": "© Derechos reservados 2024. Desarrollado con ❤️ por Andres Araque"
+  },
+  "language": {
+    "selector": "Idioma",
+    "english": "English",
+    "spanish": "Español"
+  }
+}

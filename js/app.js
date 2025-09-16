@@ -38,47 +38,19 @@ sr.reveal(".portfolio-gallery", {
 });
 
 // Education section animations
-sr.reveal(".education-card:nth-child(1)", {
-  origin: "left",
-  delay: 200,
-  distance: "60px",
-  duration: 1000,
-});
-
-sr.reveal(".education-card:nth-child(2)", {
-  origin: "right",
+sr.reveal(".education-card", {
+  origin: "bottom",
   delay: 400,
-  distance: "60px",
-  duration: 1000,
+  distance: "30px",
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  var reg = document.getElementById("typed-element");
+  // Wait for i18n to initialize
+  setTimeout(() => {
+    initializeTypewriter();
+    initializeLanguageSelector();
+  }, 100);
 
-  var typewriter = new Typewriter(reg, {
-    loop: true,
-    delay: 50,
-    deleteSpeed: 30,
-  });
-
-  typewriter
-    .pauseFor(1500)
-    .typeString(
-      "Building the <strong>future</strong>, one line of <strong>code</strong> at a time."
-    )
-    .pauseFor(1500)
-    .deleteAll()
-    .typeString(
-      "Innovating with <strong>purpose</strong>, developing with <strong>passion</strong>."
-    )
-    .pauseFor(1500)
-    .deleteAll()
-    .typeString(
-      "Turning <strong>visions</strong> into <strong>reality</strong> through <strong>clean code</strong>."
-    )
-    .pauseFor(1500)
-    .deleteAll()
-    .start();
   const toggle = document.getElementById("nav-toggle"),
     nav = document.getElementById("nav-menu"),
     logo = document.getElementById("principal-logo");
@@ -117,6 +89,95 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   window.addEventListener("scroll", stickyNavbar);
 });
+
+function initializeTypewriter() {
+  var reg = document.getElementById("typed-element");
+  if (!reg) return;
+
+  var typewriter = new Typewriter(reg, {
+    loop: true,
+    delay: 50,
+    deleteSpeed: 30,
+  });
+
+  // Get translations for typewriter text
+  const messages = [
+    window.i18n
+      ? window.i18n.t("hero.description")
+      : "Building the future, one line of code at a time.",
+    window.i18n
+      ? window.i18n.t("hero.message1")
+      : "Innovating with purpose, developing with passion.",
+    window.i18n
+      ? window.i18n.t("hero.message2")
+      : "Turning visions into reality through clean code.",
+  ];
+
+  typewriter
+    .pauseFor(1500)
+    .typeString(messages[0])
+    .pauseFor(1500)
+    .deleteAll()
+    .typeString(messages[1])
+    .pauseFor(1500)
+    .deleteAll()
+    .typeString(messages[2])
+    .pauseFor(1500)
+    .deleteAll()
+    .start();
+}
+
+function initializeLanguageSelector() {
+  const langBtn = document.getElementById("lang-btn");
+  const langDropdown = document.getElementById("lang-dropdown");
+  const langOptions = document.querySelectorAll(".lang-option");
+
+  if (!langBtn || !langDropdown) return;
+
+  // Toggle dropdown
+  langBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    langDropdown.classList.toggle("show");
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!langBtn.contains(e.target) && !langDropdown.contains(e.target)) {
+      langDropdown.classList.remove("show");
+    }
+  });
+
+  // Handle language selection
+  langOptions.forEach((option) => {
+    option.addEventListener("click", () => {
+      const selectedLang = option.getAttribute("data-lang");
+      if (window.i18n) {
+        window.i18n.changeLanguage(selectedLang);
+        updateActiveLanguage(selectedLang);
+        // Restart typewriter with new language
+        setTimeout(() => {
+          initializeTypewriter();
+        }, 100);
+      }
+      langDropdown.classList.remove("show");
+    });
+  });
+
+  // Set initial active language
+  if (window.i18n) {
+    updateActiveLanguage(window.i18n.getCurrentLanguage());
+  }
+}
+
+function updateActiveLanguage(lang) {
+  const langOptions = document.querySelectorAll(".lang-option");
+  langOptions.forEach((option) => {
+    option.classList.remove("active");
+    if (option.getAttribute("data-lang") === lang) {
+      option.classList.add("active");
+    }
+  });
+}
 
 /* --------------- Portfolio Filter Animation --------------- */
 let mixer = mixitup(".portfolio-gallery", {
