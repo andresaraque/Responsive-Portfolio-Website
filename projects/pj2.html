@@ -30,41 +30,7 @@
     <link rel="manifest" href="./../assets/site.webmanifest" />
   </head>
   <body>
-    <header class="scrolled">
-      <!-- --------- Navbar --------- -->
-      <nav class="container">
-        <div class="nav-data">
-          <a href="./../index.html" class="logo" id="principal-logo">A_A</a>
-
-          <div class="nav-toggle" id="nav-toggle">
-            <i
-              class="uil uil-list-ul nav-burger common-icon change-color-icon"
-            ></i>
-            <i
-              class="uil uil-multiply nav-close common-icon change-color-icon"
-            ></i>
-          </div>
-        </div>
-
-        <div class="nav-menu" id="nav-menu">
-          <ul class="nav-list">
-            <li><a href="./../index.html" class="nav-link">Home</a></li>
-            <li>
-              <a href="./../index.html#about-nav" class="nav-link">About</a>
-            </li>
-            <li>
-              <a href="./../index.html#skills-nav" class="nav-link">Skills</a>
-            </li>
-            <li>
-              <a href="./../index.html#portfolio-nav" class="nav-link"
-                >Portfolio</a
-              >
-            </li>
-          </ul>
-          <!-- <i class="uil uil-moon toggle-btn"></i> -->
-        </div>
-      </nav>
-    </header>
+    <app-header data-base="./../" data-scrolled="true"></app-header>
 
     <main>
       <div class="container">
@@ -173,43 +139,9 @@
       </div>
     </main>
 
-    <footer>
-      <div class="container">
-        <a href="./../index.html" class="logo" id="principal-logo">A_A</a>
-        <p class="text">
-          &copy; Copyright 2024. Developed with ❤️ by Andres Araque
-        </p>
-        <ul class="social-media">
-          <li>
-            <a
-              href="https://api.whatsapp.com/send?phone=573217207734"
-              target="_blank"
-              class="social-link"
-            >
-              <i class="uil uil-whatsapp"></i>
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://github.com/andresaraque"
-              target="_blank"
-              class="social-link"
-            >
-              <i class="uil uil-github"></i>
-            </a>
-          </li>
-          <li>
-            <a
-              href="mailto:andresaraque24dos@gmail.com?subject=Contact%20From%20Portfolio&body=Hello%20Andres,"
-              target="_blank"
-              class="social-link"
-            >
-              <i class="uil uil-envelope"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </footer>
+    <app-footer data-base="./../"></app-footer>
+    <script src="./../js/components/header.js"></script>
+    <script src="./../js/components/footer.js"></script>
     <script src="./../js/app-project.js"></script>
   </body>
 </html>
