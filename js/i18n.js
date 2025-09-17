@@ -44,7 +44,9 @@ class I18n {
 
   // Load translation files
   async loadTranslations() {
-    const response = await fetch(`./translations/${this.currentLanguage}.json`);
+    const isProjects = window.location.pathname.includes('/projects/');
+    const basePath = isProjects ? '../translations' : './translations';
+    const response = await fetch(`${basePath}/${this.currentLanguage}.json`);
     this.translations = await response.json();
   }
 

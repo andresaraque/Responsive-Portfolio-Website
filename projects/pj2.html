@@ -9,6 +9,7 @@
       href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
     />
     <link rel="stylesheet" href="./../css/style.css" />
+    <link rel="stylesheet" href="./../css/i18n.css" />
     <link rel="stylesheet" href="./../css/style-project.css" />
     <link
       rel="apple-touch-icon"
@@ -35,7 +36,7 @@
     <main>
       <div class="container">
         <div style="padding-top: var(--section-padding)">
-          <h1 class="heading title-pj">Bank of Occidente</h1>
+          <h1 class="heading title-pj" data-i18n="project.pj2.companyTitle">Bank of Occidente</h1>
           <div class="wrapper-project">
             <div class="container-img">
               <img
@@ -44,8 +45,8 @@
               />
             </div>
             <div class="project-info">
-              <h1 class="heading">OTP Generation and Validation Service</h1>
-              <p class="text">
+              <h1 class="heading" data-i18n="project.pj2.title">OTP Generation and Validation Service</h1>
+              <p class="text" data-i18n="project.pj2.description">
                 Developed a robust One-Time Password (OTP) generation and
                 validation service for secure client authentication at Banco de
                 Occidente.
@@ -54,22 +55,24 @@
                 class="btn secondary-btn padding-all tooltip"
                 target="_blank"
                 href="https://www.bancodeoccidente.com.co/libre-inversion-autogestion-flujo-corto/"
+                data-i18n="project.common.visit"
                 >Visit Website
                 <span class="tooltiptext"
+                  data-i18n="project.pj2.tooltip"
                   >You must pass the first screen to see the OTP
                   authentication.</span
                 >
               </a>
-              <div class="text-tooltip-sm">
+              <div class="text-tooltip-sm" data-i18n="project.pj2.tooltipShort">
                 <span class="icon-tooltip"
                   ><i class="uil uil-comment-info-alt"></i></span
                 >You must pass the first screen to see the OTP authentication.
               </div>
-              <p class="text">
+              <p class="text" data-i18n="project.pj2.integration">
                 This service was designed to be integrated into various Bank of
                 Occidente applications through microfrontends.
               </p>
-              <h3 class="sub-heading">technologies:</h3>
+              <h3 class="sub-heading" data-i18n="project.common.technologies">technologies:</h3>
               <img
                 src="https://img.shields.io/badge/AWS%20Cloud%20Services-171f21?style=flat&logo=amazonwebservices&logoColor=%23FF9900"
                 alt="Badge of AWS"
@@ -91,7 +94,7 @@
                 alt="Badge of webpack"
               />
 
-              <h3 class="sub-heading" style="margin-top: 2.5rem">
+              <h3 class="sub-heading" style="margin-top: 2.5rem" data-i18n="project.common.awsServices">
                 AWS Services:
               </h3>
               <img
@@ -130,7 +133,7 @@
           </div>
         </div>
         <section class="section">
-          <h1 class="heading">Architecture Diagram</h1>
+          <h1 class="heading" data-i18n="project.pj2.architecture">Architecture Diagram</h1>
 
           <div class="pj-details">
             <img src="./../assets/pj2-detail.png" alt="Generate OTP" />
@@ -139,9 +142,12 @@
       </div>
     </main>
 
+    <app-language></app-language>
     <app-footer data-base="./../"></app-footer>
     <script src="./../js/components/header.js"></script>
     <script src="./../js/components/footer.js"></script>
+    <script src="./../js/components/language.js"></script>
+    <script src="./../js/i18n.js"></script>
     <script src="./../js/app-project.js"></script>
   </body>
 </html>

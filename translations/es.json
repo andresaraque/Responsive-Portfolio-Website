@@ -71,8 +71,8 @@
     },
     "projects": {
       "loan": {
-        "title": "Aplicación Web de Préstamos Personales",
-        "description": "Contribuí al desarrollo de esta innovadora aplicación web, que permite a los usuarios solicitar un préstamo personal.",
+        "title": "Aplicación Web de Préstamos Personales Libre Inversión",
+        "description": "Contribuí al desarrollo de esta innovadora aplicación web, que permite a los usuarios solicitar un préstamo personal de libre Inversión.",
         "readMore": "Leer más"
       },
       "otp": {
@@ -98,5 +98,37 @@
     "selector": "Idioma",
     "english": "English",
     "spanish": "Español"
+  },
+  "project": {
+    "common": {
+      "visit": "Visitar Sitio Web",
+      "technologies": "tecnologías:",
+      "awsServices": "Servicios de AWS:"
+    },
+    "pj1": {
+      "companyTitle": "Banco de Occidente",
+      "title": "Aplicación Web de Préstamos Personales Libre Inversión",
+      "description": "Contribuí al desarrollo de esta innovadora aplicación web, que permite a los usuarios solicitar un préstamo personal de libre inversión.",
+      "responsibilities": {
+        "1": "* Creación de una interfaz responsiva y amigable para el usuario, alineada al diseño del banco.",
+        "2": "* Desarrollo de APIs seguras y eficientes, implementación de lógica de negocio e integración con servicios de terceros."
+      }
+    },
+    "pj2": {
+      "companyTitle": "Banco de Occidente",
+      "title": "Servicio de Generación y Validación OTP",
+      "description": "Desarrollé un servicio robusto de generación y validación de contraseñas de un solo uso (OTP) para autenticación segura de clientes en Banco de Occidente.",
+      "integration": "Este servicio fue diseñado para integrarse en varias aplicaciones del Banco de Occidente mediante microfrontends.",
+      "tooltip": "Debes pasar la primera pantalla para ver la autenticación OTP.",
+      "tooltipShort": "Debes pasar la primera pantalla para ver la autenticación OTP.",
+      "architecture": "Diagrama de Arquitectura"
+    },
+    "pj3": {
+      "companyTitle": "Banco de Occidente",
+      "title": "Mecanismo de Carga y Adquisición de Tasas",
+      "description1": "Desarrollé un sistema para el Banco de Occidente que permite a departamentos específicos cargar archivos Excel con tasas de interés, perfiles de clientes y tipos de productos (por ejemplo, vivienda, consumo, vehículo). El sistema valida el archivo con Python, lo convierte a CSV y almacena las tasas en una base de datos AWS DynamoDB en operaciones por lotes, optimizando el proceso para cargas masivas.",
+      "description2": "Adicionalmente, el sistema provee una API para que otros productos o servicios consuman los datos almacenados de forma dinámica, recuperando los conjuntos de tasas según el tipo de producto.",
+      "description3": "Si el proceso finaliza correctamente, el sistema envía una notificación a través de temas de AWS SNS a los interesados. En caso de errores durante la validación o el procesamiento, se envían notificaciones de error por el mismo mecanismo."
+    }
   }
 }

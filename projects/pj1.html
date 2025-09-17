@@ -9,6 +9,7 @@
       href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
     />
     <link rel="stylesheet" href="./../css/style.css" />
+    <link rel="stylesheet" href="./../css/i18n.css" />
     <link rel="stylesheet" href="./../css/style-project.css" />
     <link
       rel="apple-touch-icon"
@@ -35,7 +36,9 @@
     <main>
       <div class="container">
         <section class="section">
-          <h1 class="heading title-pj">Bank of Occidente</h1>
+          <h1 class="heading title-pj" data-i18n="project.pj1.companyTitle">
+            Bank of Occidente
+          </h1>
           <div class="wrapper-project">
             <div class="container-img">
               <img
@@ -44,8 +47,10 @@
               />
             </div>
             <div class="project-info">
-              <h1 class="heading">Online Personal Loan Application</h1>
-              <p class="text">
+              <h1 class="heading" data-i18n="project.pj1.title">
+                Online Personal Loan Application
+              </h1>
+              <p class="text" data-i18n="project.pj1.description">
                 I contributed to the development of this innovative web
                 application, which allows users to apply for a personal loan.
               </p>
@@ -53,15 +58,23 @@
                 class="btn secondary-btn padding-all"
                 target="_blank"
                 href="https://www.bancodeoccidente.com.co/libre-inversion-autogestion-flujo-corto/"
+                data-i18n="project.common.visit"
                 >Visit Website</a
               >
-              <p class="text">
-                * Creating a responsive, user-friendly interface for seamless
-                customer interactions through the bank's design system.<br />*
-                Developing secure and efficient APIs, implementing business
-                logic, and integrating with third-party services.
-              </p>
-              <h3 class="sub-heading">technologies:</h3>
+              <div class="text">
+                <p data-i18n="project.pj1.responsibilities.1">
+                  * Creating a responsive, user-friendly interface for seamless
+                  customer interactions through the bank's design system.
+                </p>
+                <p data-i18n="project.pj1.responsibilities.2">
+                  * Developing secure and efficient APIs, implementing business
+                  logic, and integrating with third-party services.
+                </p>
+              </div>
+
+              <h3 class="sub-heading" data-i18n="project.common.technologies">
+                technologies:
+              </h3>
               <img
                 src="https://img.shields.io/badge/React-171f21?style=flat&logo=react"
                 alt="Badge of React"
@@ -87,7 +100,11 @@
                 alt="Badge of Terraform"
               />
 
-              <h3 class="sub-heading" style="margin-top: 2.5rem">
+              <h3
+                class="sub-heading"
+                style="margin-top: 2.5rem"
+                data-i18n="project.common.awsServices"
+              >
                 AWS Services:
               </h3>
               <img
@@ -120,9 +137,12 @@
       </div>
     </main>
 
+    <app-language></app-language>
     <app-footer data-base="./../"></app-footer>
     <script src="./../js/components/header.js"></script>
     <script src="./../js/components/footer.js"></script>
+    <script src="./../js/components/language.js"></script>
+    <script src="./../js/i18n.js"></script>
     <script src="./../js/app-project.js"></script>
   </body>
 </html>

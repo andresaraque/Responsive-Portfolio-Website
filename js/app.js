@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Wait for i18n to initialize
   setTimeout(() => {
     initializeTypewriter();
-    initializeLanguageSelector();
+    // initializeLanguageSelector(); // Removed - now handled by app-language custom element
   }, 100);
 
   const toggle = document.getElementById("nav-toggle"),
@@ -91,10 +91,10 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function initializeTypewriter() {
-  var reg = document.getElementById("typed-element");
+  const reg = document.getElementById("typed-element");
   if (!reg) return;
 
-  var typewriter = new Typewriter(reg, {
+  const typewriter = new Typewriter(reg, {
     loop: true,
     delay: 50,
     deleteSpeed: 30,
@@ -127,57 +127,7 @@ function initializeTypewriter() {
     .start();
 }
 
-function initializeLanguageSelector() {
-  const langBtn = document.getElementById("lang-btn");
-  const langDropdown = document.getElementById("lang-dropdown");
-  const langOptions = document.querySelectorAll(".lang-option");
-
-  if (!langBtn || !langDropdown) return;
-
-  // Toggle dropdown
-  langBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    langDropdown.classList.toggle("show");
-  });
-
-  // Close dropdown when clicking outside
-  document.addEventListener("click", (e) => {
-    if (!langBtn.contains(e.target) && !langDropdown.contains(e.target)) {
-      langDropdown.classList.remove("show");
-    }
-  });
-
-  // Handle language selection
-  langOptions.forEach((option) => {
-    option.addEventListener("click", () => {
-      const selectedLang = option.getAttribute("data-lang");
-      if (window.i18n) {
-        window.i18n.changeLanguage(selectedLang);
-        updateActiveLanguage(selectedLang);
-        // Restart typewriter with new language
-        setTimeout(() => {
-          initializeTypewriter();
-        }, 100);
-      }
-      langDropdown.classList.remove("show");
-    });
-  });
-
-  // Set initial active language
-  if (window.i18n) {
-    updateActiveLanguage(window.i18n.getCurrentLanguage());
-  }
-}
-
-function updateActiveLanguage(lang) {
-  const langOptions = document.querySelectorAll(".lang-option");
-  langOptions.forEach((option) => {
-    option.classList.remove("active");
-    if (option.getAttribute("data-lang") === lang) {
-      option.classList.add("active");
-    }
-  });
-}
+// Language selector functions moved to app-language custom element
 
 /* --------------- Portfolio Filter Animation --------------- */
 let mixer = mixitup(".portfolio-gallery", {
@@ -197,7 +147,7 @@ zoom_icons.forEach((ic, i) => {
     prt_section.classList.add("open-modal");
     document.body.classList.add("stop-scrolling");
     currentIndex = i;
-    console.log(`images: ${images}, and the index of image its: ${i}`);
+    console.log(`images: ${images.length}, and the index of image its: ${i}`);
     changeImage(currentIndex);
   });
 });
