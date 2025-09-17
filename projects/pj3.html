@@ -9,6 +9,7 @@
       href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
     />
     <link rel="stylesheet" href="./../css/style.css" />
+    <link rel="stylesheet" href="./../css/i18n.css" />
     <link rel="stylesheet" href="./../css/style-project.css" />
     <link
       rel="apple-touch-icon"
@@ -49,7 +50,7 @@
     <main>
       <div class="container">
         <div style="padding-top: var(--section-padding)">
-          <h1 class="heading title-pj">Bank of Occidente</h1>
+          <h1 class="heading title-pj" data-i18n="project.pj3.companyTitle">Bank of Occidente</h1>
           <div class="wrapper-project">
             <div class="container-img">
               <img
@@ -58,8 +59,8 @@
               />
             </div>
             <div class="project-info">
-              <h1 class="heading">Rate Upload and Acquisition Mechanism</h1>
-              <p class="text">
+              <h1 class="heading" data-i18n="project.pj3.title">Rate Upload and Acquisition Mechanism</h1>
+              <p class="text" data-i18n="project.pj3.description1">
                 Developed a system for the Bank of Occidente to enable specific
                 departments to upload Excel files containing interest rates,
                 customer profiles, and product types (e.g., housing loans,
@@ -68,12 +69,12 @@
                 an AWS DynamoDB database in batch operations, optimizing the
                 process for large-scale data uploads.
               </p>
-              <p class="text">
+              <p class="text" data-i18n="project.pj3.description2">
                 Additionally, the system provides an API to allow other products
                 or services to consume the stored data dynamically, retrieving
                 the specific rate sets based on product type.
               </p>
-              <p class="text">
+              <p class="text" data-i18n="project.pj3.description3">
                 If the process completes successfully, the system sends a
                 notification via AWS SNS topics to relevant stakeholders. In
                 case of errors during validation or processing, error
@@ -82,7 +83,7 @@
             </div>
             <div>
               <div class="div">
-                <h3 class="sub-heading">technologies:</h3>
+                <h3 class="sub-heading" data-i18n="project.common.technologies">technologies:</h3>
                 <img
                   src="https://img.shields.io/badge/Python-171f21?style=flat&logo=python"
                   alt="Badge of Python"
@@ -109,7 +110,7 @@
                 />
               </div>
               <div style="margin-top: 2.5rem">
-                <h3 class="sub-heading">AWS Services:</h3>
+                <h3 class="sub-heading" data-i18n="project.common.awsServices">AWS Services:</h3>
                 <img
                   src="https://img.shields.io/badge/S3-Bucket-171f21?style=flat&logo=amazons3"
                   alt="Badge of S3"
@@ -149,9 +150,12 @@
       </div>
     </main>
 
+    <app-language></app-language>
     <app-footer data-base="./../"></app-footer>
     <script src="./../js/components/header.js"></script>
     <script src="./../js/components/footer.js"></script>
+    <script src="./../js/components/language.js"></script>
+    <script src="./../js/i18n.js"></script>
     <script src="./../js/app-project.js"></script>
   </body>
 </html>
