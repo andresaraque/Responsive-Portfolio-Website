@@ -594,6 +594,10 @@ nav.container {
   gap: 0.5rem;
 }
 
+#education-software-architecture, #education-icagile {
+  scroll-margin-top: calc(var(--header-height) + 5rem);
+}
+
 .skill-tag {
   display: inline-block;
   padding: 0.4rem 0.8rem;
