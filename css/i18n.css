@@ -178,5 +178,8 @@ body.dark .lang-option.active {
     bottom: 30px;
     right: 10px;
   }
+  .lang-dropdown {
+    top: -320%;
+  }
 }
 
