@@ -172,3 +172,11 @@ body.dark .lang-option.active {
   color: var(--bg-color-2);
 }
 
+/* --- Media queries --- */
+@media (max-width: 576px) {
+  .lan-fixed {
+    bottom: 30px;
+    right: 10px;
+  }
+}
+

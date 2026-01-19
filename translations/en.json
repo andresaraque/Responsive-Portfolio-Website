@@ -64,6 +64,13 @@
       "duration": "April 2022",
       "description": "International certification that validates competencies in agile methodologies. It demonstrates the ability to act as an agile professional with fundamental knowledge of agile principles and practices.",
       "skills": ["Agile Methodologies", "Scrum", "Team Collaboration"]
+    },
+    "aws": {
+      "title": "AWS Certified Cloud Practitioner",
+      "institution": "Amazon Web Services (AWS)",
+      "duration": "December 2025",
+      "description": "Foundational-level certification that validates knowledge of AWS Cloud concepts, services, and best practices. It demonstrates understanding of AWS Cloud value proposition and basic architectural principles.",
+      "skills": ["AWS Cloud", "Cloud Computing", "AWS Services"]
     }
   },
   "portfolio": {
