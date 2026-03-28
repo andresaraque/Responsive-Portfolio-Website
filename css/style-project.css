@@ -1,39 +1,180 @@
-.title-pj {
-  font-size: 3rem;
+/* ===================== PROJECT PAGE STYLES ===================== */
+
+/* --- Page header block: company pill + project title --- */
+.project-page-header {
   text-align: center;
+  padding-bottom: 0.5rem;
 }
-.container-img {
-  position: relative;
-  max-width: 800px;
+
+.company-label {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--main-color-1);
+  background-color: var(--main-color-2);
+  padding: 0.3rem 1rem;
+  border-radius: 2rem;
+  margin-bottom: 1.1rem;
 }
-.container-img img {
-  width: 100%;
-  border-radius: 1em;
+
+.title-pj {
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
+  text-align: center;
+  color: var(--heading-color);
+  line-height: 1.25;
 }
-.container-img .to-site-btn::before {
-  background-color: var(--bg-color-2);
-}
+
+/* --- Two-column project layout --- */
 .wrapper-project {
   margin-top: 3rem;
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  align-items: center;
-  gap: 3rem;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: start;
+  gap: 3.5rem;
 }
 
-.logo {
-  color: var(--smooth-blue);
+/* --- Image card with lift-and-zoom hover --- */
+.container-img {
+  position: relative;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.12),
+    0 4px 16px rgba(0, 0, 0, 0.07);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.container-img:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 28px 72px rgba(0, 0, 0, 0.17),
+    0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.container-img img {
+  width: 100%;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.container-img:hover img {
+  transform: scale(1.03);
+}
+
+/* --- Info column --- */
+.project-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.project-info > .text {
+  line-height: 1.78;
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* --- Button group --- */
+.btn-group {
+  display: flex;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* --- Feature / responsibility list (items contain leading * from i18n) --- */
+.feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.feature-list p {
+  padding-left: 1.15rem;
+  text-indent: -1.15rem;
+  line-height: 1.74;
+  font-size: 0.91rem;
+  color: var(--text-color);
+  margin: 0;
+  opacity: 0.88;
+}
+
+/* --- Technology / badge section --- */
+.tech-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.sub-heading {
+  font-size: 0.7rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--strong-blue);
+  margin: 0;
+}
+
+.badge-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  align-items: center;
+}
+
+.badge-group img {
+  height: 22px;
+  border-radius: 4px;
+  opacity: 0.88;
+  transition: transform 0.22s ease, opacity 0.22s ease;
+}
+
+.badge-group img:hover {
+  transform: translateY(-2px) scale(1.05);
+  opacity: 1;
+}
+
+/* --- Architecture / detail diagram section --- */
+.architecture-section {
+  padding-bottom: var(--section-padding);
+}
+
+.architecture-section > .heading {
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .pj-details {
-  margin-top: 4rem;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  box-shadow:
+    0 12px 48px rgba(0, 0, 0, 0.1),
+    0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.pj-details:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 18px 56px rgba(0, 0, 0, 0.14),
+    0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .pj-details img {
   width: 100%;
-  border-radius: 12px;
+  display: block;
 }
 
+/* --- Misc --- */
+.logo {
+  color: var(--smooth-blue);
+}
+
+/* --- Tooltip --- */
 .tooltip {
   position: relative;
   display: inline-block;
@@ -41,20 +182,25 @@
 
 .tooltip .tooltiptext {
   visibility: hidden;
-  width: 120px;
-  background-color: var(--main-color-2);
-  color: var(--main-color-1);
+  width: 200px;
+  background-color: var(--main-color-1);
+  color: #fff;
   text-align: center;
-  border-radius: 6px;
-  padding: 6px 0;
+  border-radius: 8px;
+  padding: 8px 12px;
   position: absolute;
-  z-index: 1;
-  bottom: 125%;
+  z-index: 10;
+  bottom: calc(100% + 10px);
   left: 50%;
-  margin-left: -60px;
+  transform: translateX(-50%);
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity 0.25s ease;
   text-transform: none;
+  font-size: 0.78rem;
+  font-weight: 400;
+  line-height: 1.45;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  pointer-events: none;
 }
 
 .tooltip .tooltiptext::after {
@@ -62,10 +208,10 @@
   position: absolute;
   top: 100%;
   left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
+  margin-left: -6px;
+  border-width: 6px;
   border-style: solid;
-  border-color: var(--main-color-2) transparent transparent transparent;
+  border-color: var(--main-color-1) transparent transparent transparent;
 }
 
 .tooltip:hover .tooltiptext {
@@ -74,32 +220,56 @@
 }
 
 .text-tooltip-sm {
-  margin-top: 3px;
-  font-size: 0.7rem;
-  font-weight: 100;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 5px;
+  font-size: 0.71rem;
+  font-weight: 400;
   opacity: 0;
-  transition: 0.3s;
+  transition: opacity 0.3s;
+  color: var(--text-color);
 }
 
 .text-tooltip-sm .icon-tooltip {
-  margin-right: 5px;
   color: var(--main-color-dark-2);
+  flex-shrink: 0;
 }
 
-@media (max-width: 768px) {
+/* ===================== RESPONSIVE ===================== */
+
+@media (max-width: 900px) {
   .wrapper-project {
     grid-template-columns: 1fr !important;
     grid-template-rows: auto !important;
-    gap: 3rem;
+    gap: 2.5rem;
   }
 
   .wrapper-project .project-info {
     grid-area: auto !important;
   }
+
+  .container-img {
+    max-width: 600px;
+    margin-inline: auto;
+  }
 }
 
 @media (max-width: 576px) {
+  .title-pj {
+    font-size: 1.6rem;
+  }
+
+  .wrapper-project {
+    gap: 2rem;
+  }
+
   .text-tooltip-sm {
     opacity: 1;
+  }
+
+  .btn-group {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

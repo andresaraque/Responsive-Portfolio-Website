@@ -1,3 +1,6 @@
+// Bump when renaming translation files (new URL bypasses CDN/browser cache for old bundles).
+const I18N_TRANSLATION_BUNDLE_VERSION = 2;
+
 // Internationalization (i18n) System
 class I18n {
   constructor() {
@@ -46,7 +49,9 @@ class I18n {
   async loadTranslations() {
     const isProjects = window.location.pathname.includes('/projects/');
     const basePath = isProjects ? '../translations' : './translations';
-    const response = await fetch(`${basePath}/${this.currentLanguage}-v1.json`);
+    const response = await fetch(
+      `${basePath}/${this.currentLanguage}-v${I18N_TRANSLATION_BUNDLE_VERSION}.json`
+    );
     this.translations = await response.json();
   }
 

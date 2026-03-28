@@ -1,0 +1,18 @@
+---
+description: Project context from AI_CONTEXT.md, i18n/custom elements stack, and Context7 for library docs
+alwaysApply: true
+---
+
+# Portfolio project — context and documentation
+
+## Read project context first
+
+Before making changes that affect **page structure**, **shared layout**, **`js/i18n.js`**, **`translations/*.json`**, **`js/components/`** (custom elements), or **`vercel.json`**, read or re-read **`AI_CONTEXT.md`** at the repository root. It describes entry HTML files, script load order, i18n behavior, Web Components, and Vercel rewrites/cache for translations. For deploy URLs, step-by-step Vercel usage, and troubleshooting from a maintainer perspective, also check **`DEPLOYMENT.md`**; if guidance conflicts, follow **`AI_CONTEXT.md`** and the actual source files.
+
+## Documentation via Context7 MCP
+
+When you need **library, framework, SDK, API, or CLI documentation** (including dependencies used here such as Swiper, ScrollReveal, Typewriter, or Vercel configuration), **use the Context7 MCP** to fetch current docs instead of relying on memory or guessing outdated APIs.
+
+## Stack constraints
+
+Keep changes aligned with this codebase: **vanilla JavaScript**, **custom elements** for header/footer/language, **JSON files** for `en`/`es` translations, and **static HTML** pages without introducing a bundler unless the user explicitly requests a migration.

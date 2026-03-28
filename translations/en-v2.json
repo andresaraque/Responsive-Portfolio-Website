@@ -40,6 +40,7 @@
     "frontend": "Frontend",
     "backend": "Backend",
     "database": "Database",
+    "ai": "AI & Applied ML",
     "infrastructure": "Infrastructure",
     "versionControl": "Version Control"
   },
@@ -96,6 +97,11 @@
         "title": "Rate Upload and Acquisition Mechanism",
         "description": "Developed a system for the Bank of Occidente to enable specific departments to upload Excel files containing interest rates, customer profiles, and product types.",
         "readMore": "Read more"
+      },
+      "emma": {
+        "title": "Emma — AI English Tutor",
+        "description": "I built Emma, an AI-powered English tutor on Telegram that teaches through text and voice using AWS Bedrock, Step Functions, and more.",
+        "readMore": "Read more"
       }
     },
     "cta": {
@@ -104,7 +110,7 @@
     }
   },
   "footer": {
-    "copyright": "© Copyright 2024. Developed with ❤️ by Andres Araque"
+    "copyright": "© Copyright 2026. Developed with ❤️ by Andres Araque"
   },
   "language": {
     "selector": "Language",
@@ -141,6 +147,20 @@
       "description1": "Developed a system for the Bank of Occidente to enable specific departments to upload Excel files containing interest rates, customer profiles, and product types (e.g., housing loans, personal loans, vehicle loans). The system validates the file format using Python, converts it to CSV, and stores the rates in an AWS DynamoDB database in batch operations, optimizing the process for large-scale data uploads.",
       "description2": "Additionally, the system provides an API to allow other products or services to consume the stored data dynamically, retrieving the specific rate sets based on product type.",
       "description3": "If the process completes successfully, the system sends a notification via AWS SNS topics to relevant stakeholders. In case of errors during validation or processing, error notifications are sent via the same mechanism."
+    },
+    "pj4": {
+      "companyTitle": "LingoMate",
+      "title": "Emma — AI English Tutor",
+      "description": "I designed and built Emma, an AI-powered English tutor that lives inside Telegram. Users can practice English through text or voice messages and receive instant, personalized feedback powered by large language models.",
+      "feature1": "* Text & voice interaction: users can chat in writing or send audio messages; voice input is transcribed by AWS Transcribe (Whisper-compatible), processed, and responded to in natural speech via Amazon Polly (TTS models).",
+      "feature2": "* Serverless event-driven architecture orchestrated with AWS Step Functions and Lambda, ensuring each conversation turn is processed reliably and cost-efficiently at any scale.",
+      "feature3": "* Conversation memory persisted in Amazon DynamoDB, allowing Emma to maintain context across sessions and deliver a coherent tutoring experience.",
+      "feature4": "* Model inference powered by Amazon Bedrock (Amazon Nova), enabling advanced language understanding and generation without managing model infrastructure.",
+      "feature5": "* Secrets and API keys managed through AWS Secrets Manager; event routing handled by Amazon EventBridge for decoupled, extensible flows.",
+      "feature6": "* Infrastructure defined entirely as code with AWS CDK (TypeScript), enabling reproducible, version-controlled deployments from day one.",
+      "tryBot": "Try Emma on Telegram",
+      "visitSite": "Visit Official Site",
+      "architectureTitle": "Architecture Overview"
     }
   }
 }

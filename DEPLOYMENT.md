@@ -1,211 +1,182 @@
-# 🌍 Despliegue Multiidioma en Vercel
+# Despliegue multiidioma en Vercel
 
-## 📋 Resumen
+## Resumen
 
-Este portafolio web está configurado para soportar dos idiomas:
-- **Inglés (EN)** - Idioma por defecto
-- **Español (ES)** - Idioma secundario
+Este portafolio soporta dos idiomas:
 
-## 🚀 Despliegue en Vercel
+- **Inglés (`en`)** — por defecto
+- **Español (`es`)**
 
-### 1. Preparación del Proyecto
+La implementación técnica (componentes, orden de scripts, nombres de archivos JSON) está resumida en [`AI_CONTEXT.md`](AI_CONTEXT.md) para quien edite el código o lo use con un asistente.
 
-Asegúrate de que todos los archivos estén en su lugar:
+## Preparación del proyecto
+
+Estructura relevante:
 
 ```
-📁 Responsive-Portfolio-Website/
-├── 📁 translations/
-│   ├── en.json
-│   └── es.json
-├── 📁 css/
+Responsive-Portfolio-Website/
+├── translations/
+│   ├── en-v2.json
+│   └── es-v2.json
+├── css/
 │   ├── style.css
-│   └── i18n.css
-├── 📁 js/
+│   ├── i18n.css
+│   └── style-project.css
+├── js/
 │   ├── i18n.js
-│   └── app.js
+│   ├── app.js
+│   ├── app-project.js
+│   ├── mixitup.min.js
+│   └── components/
+│       ├── header.js      # <app-header>
+│       ├── footer.js      # <app-footer>
+│       └── language.js    # <app-language> (selector de idioma)
+├── projects/
+│   ├── pj1.html
+│   ├── pj2.html
+│   └── pj3.html
 ├── index.html
 ├── vercel.json
-└── ...otros archivos
+└── ...
 ```
 
-### 2. Configuración de Vercel
+Los bundles usan **`en-v{N}.json` / `es-v{N}.json`**; el número **`N`** está en la constante **`I18N_TRANSLATION_BUNDLE_VERSION`** al inicio de `js/i18n.js`. Para invalidar caché tras un deploy, incrementa **`N`**, crea los nuevos archivos JSON y elimina (o deja de referenciar) los anteriores.
 
-El archivo `vercel.json` ya está configurado con:
+## Configuración en Vercel (`vercel.json`)
 
-- **Rewrites** para rutas de idioma:
+- **Rewrites** para rutas con prefijo de idioma:
   - `/en` → `index.html?lang=en`
   - `/es` → `index.html?lang=es`
-  - `/en/projects/...` → `projects/...?lang=en`
-  - `/es/projects/...` → `projects/...?lang=es`
+  - `/en/(path)` → `/(path)?lang=en`
+  - `/es/(path)` → `/(path)?lang=es`
 
-- **Headers** para optimización y seguridad
+- **Headers**
+  - `Cache-Control: public, max-age=3600, must-revalidate` para **`/translations/*`**: ~1 hora de caché en CDN/navegador; **`must-revalidate`** obliga a revalidar al expirar. Es razonable para JSON que cambia poco; para que **todos** los usuarios vean copy nuevo al instante sin esperar la hora, sube **`I18N_TRANSLATION_BUNDLE_VERSION`** y los nombres de archivo (nueva URL = caché fría).
+  - Headers de seguridad en el resto de rutas estáticas.
 
-### 3. Despliegue
+## Despliegue
 
-1. **Conecta tu repositorio a Vercel:**
+1. Conecta el repositorio en [vercel.com](https://vercel.com) o usa la CLI:
+
    ```bash
-   # Instala Vercel CLI
    npm i -g vercel
-   
-   # Despliega
    vercel
    ```
 
-2. **O usa la interfaz web de Vercel:**
-   - Ve a [vercel.com](https://vercel.com)
-   - Conecta tu repositorio de GitHub
-   - Vercel detectará automáticamente la configuración
+2. Vercel sirve el sitio como proyecto estático y aplica `vercel.json`.
 
-### 4. URLs Resultantes
+## URLs de ejemplo
 
-Después del despliegue tendrás:
+Tras el despliegue:
 
-- **Inglés:** `https://tu-dominio.vercel.app/` o `https://tu-dominio.vercel.app/en`
-- **Español:** `https://tu-dominio.vercel.app/es`
+- Inglés: `https://tu-dominio.vercel.app/` o `https://tu-dominio.vercel.app/en`
+- Español: `https://tu-dominio.vercel.app/es`
+- Proyecto con idioma: `https://tu-dominio.vercel.app/es/projects/pj1.html` (el rewrite añade `?lang=es`)
 
-## 🔧 Funcionalidades
+## Funcionalidad de idioma
 
-### Detección Automática de Idioma
+### Detección (orden)
 
-El sistema detecta el idioma en este orden:
+1. Parámetro **`?lang=en`** o **`?lang=es`**
+2. **`localStorage`** (`portfolio-language`)
+3. Idioma del navegador (`navigator.language`)
+4. Por defecto **inglés**
 
-1. **Parámetro URL** (`?lang=es`)
-2. **LocalStorage** (preferencia guardada)
-3. **Idioma del navegador**
-4. **Inglés** (por defecto)
+### Selector de idioma
 
-### Selector de Idioma
+- Implementado en el custom element **`<app-language>`** (`js/components/language.js`): botón flotante con desplegable, no está incrustado en el HTML del `<header>`.
+- Al elegir idioma se llama `window.i18n.changeLanguage(lang)`; la preferencia queda en `localStorage` y la URL se actualiza con `?lang=` sin recarga completa.
 
-- **Ubicación:** En la barra de navegación
-- **Funcionalidad:** Cambio instantáneo sin recarga
-- **Persistencia:** Guarda la preferencia en localStorage
+### SEO
 
-### SEO Optimizado
+- `document.title` y `<meta name="description">` se rellenan desde las claves `meta` de los JSON.
 
-- **Meta tags** actualizados según el idioma
-- **URLs amigables** para cada idioma
-- **Sitemap** automático para ambos idiomas
+## Agregar o cambiar textos traducidos
 
-## 📝 Agregar Nuevas Traducciones
+### 1. Archivos JSON
 
-### 1. Actualizar archivos JSON
+Edita **los dos** archivos con la **misma estructura de claves**:
 
-Edita `translations/en.json` y `translations/es.json`:
+- `translations/en-v2.json`
+- `translations/es-v2.json`
+
+Ejemplo de clave anidada:
 
 ```json
 {
   "nueva_seccion": {
-    "titulo": "Nuevo Título",
+    "titulo": "Nuevo título",
     "descripcion": "Nueva descripción"
   }
 }
 ```
 
-### 2. Actualizar HTML
+### 2. HTML
 
-Agrega atributos `data-i18n`:
-
-```html
-<h1 data-i18n="nueva_seccion.titulo">Título por defecto</h1>
-<p data-i18n="nueva_seccion.descripcion">Descripción por defecto</p>
-```
-
-### 3. Usar en JavaScript
-
-```javascript
-// Obtener traducción
-const titulo = window.i18n.t('nueva_seccion.titulo');
-
-// Con parámetros
-const mensaje = window.i18n.t('mensaje.bienvenida', {nombre: 'Andres'});
-```
-
-## 🌐 Agregar Nuevos Idiomas
-
-### 1. Crear archivo de traducción
-
-Crea `translations/fr.json` (ejemplo para francés):
-
-```json
-{
-  "meta": {
-    "title": "Andres Araque - Site Portfolio",
-    "description": "Développeur JavaScript spécialisé..."
-  }
-}
-```
-
-### 2. Actualizar selector de idioma
-
-En `index.html`, agrega la nueva opción:
+Añade `data-i18n` con la ruta de la clave:
 
 ```html
-<button class="lang-option" data-lang="fr">
-  <span class="flag">🇫🇷</span>
-  <span data-i18n="language.french">Français</span>
-</button>
+<h1 data-i18n="nueva_seccion.titulo">Fallback visible antes de i18n</h1>
+<p data-i18n="nueva_seccion.descripcion">...</p>
 ```
 
-### 3. Actualizar Vercel
+Si necesitas HTML en el valor, el código admite `data-i18n-html` en el elemento (ver `js/i18n.js`).
 
-En `vercel.json`, agrega las nuevas rutas:
-
-```json
-{
-  "rewrites": [
-    {
-      "source": "/fr",
-      "destination": "/index.html?lang=fr"
-    }
-  ]
-}
-```
-
-## 🔍 Troubleshooting
-
-### Problemas Comunes
-
-1. **Traducciones no cargan:**
-   - Verifica que los archivos JSON estén en `/translations/`
-   - Revisa la consola del navegador para errores
-
-2. **Selector de idioma no funciona:**
-   - Asegúrate de que `i18n.js` se carga antes que `app.js`
-   - Verifica que los elementos tienen los IDs correctos
-
-3. **URLs de idioma no funcionan:**
-   - Verifica la configuración en `vercel.json`
-   - Asegúrate de que Vercel detectó el archivo
-
-### Debug
-
-Abre la consola del navegador y verifica:
+### 3. JavaScript
 
 ```javascript
-// Verificar que i18n está cargado
+const titulo = window.i18n.t("nueva_seccion.titulo");
+const mensaje = window.i18n.t("mensaje.bienvenida", { nombre: "Andres" });
+```
+
+Placeholders en el JSON: `{{nombre}}` para interpolación.
+
+### 4. Tras modificar traducciones en producción
+
+Por la caché HTTP de `/translations/*`, para cambios que deban verse al instante en todos los clientes:
+
+- Incrementa **`I18N_TRANSLATION_BUNDLE_VERSION`** y añade `en-v{N}.json` / `es-v{N}.json`, o
+- Acepta hasta ~1 hora de reutilización de caché para la **misma URL** según `max-age` en `vercel.json`.
+
+## Agregar un nuevo idioma (ejemplo)
+
+Requiere tocar varios sitios (hoy solo están `en` y `es`):
+
+1. Nuevo archivo, por ejemplo `translations/fr-v2.json`, con las mismas claves que `en-v2.json`.
+2. En `js/i18n.js`, ampliar listas que validan idioma (`detectLanguage`, `changeLanguage`, etc.) para incluir `fr`.
+3. En `js/components/language.js`, añadir un botón `data-lang="fr"` y entradas en los JSON para las etiquetas del selector (`language.*`).
+4. En `vercel.json`, añadir rewrites para `/fr` y `/fr/(.*)` similares a `/en` y `/es`.
+
+## Troubleshooting
+
+1. **No cargan las traducciones**
+   - Comprueba que existen `translations/en-v2.json` y `translations/es-v2.json` (o la versión actual en `I18N_TRANSLATION_BUNDLE_VERSION`).
+   - En páginas bajo `projects/`, la ruta de fetch usa `../translations/`.
+   - Revisa la consola por errores de red (404, CORS en orígenes raros).
+
+2. **El selector no reacciona**
+   - Debe existir `window.i18n`. Revisa el **orden de scripts** en `index.html` y en `projects/pj*.html` (ver [`AI_CONTEXT.md`](AI_CONTEXT.md)).
+
+3. **Las rutas `/es` o `/en` no aplican idioma**
+   - Confirma que `vercel.json` está en el repo y desplegado.
+   - Abre la URL con `?lang=es` manualmente para aislar rewrites vs detección.
+
+### Debug en consola
+
+```javascript
 console.log(window.i18n);
-
-// Ver idioma actual
 console.log(window.i18n.getCurrentLanguage());
-
-// Ver traducciones cargadas
 console.log(window.i18n.translations);
 ```
 
-## 📊 Rendimiento
+## Rendimiento
 
-- **Carga inicial:** Solo el idioma detectado
-- **Cambio de idioma:** Carga asíncrona del nuevo idioma
-- **Cache:** Traducciones cacheadas en localStorage
-- **Tamaño:** ~2KB por archivo de traducción
+- Solo se descarga el JSON del idioma activo por carga.
+- **Preferencia** de idioma: `localStorage`.
+- **Contenido de traducciones**: cache HTTP en Vercel para `/translations/*` (ver `vercel.json`), no se guarda el JSON completo en `localStorage`.
 
-## 🎯 Próximos Pasos
+## Próximos pasos habituales
 
-1. **Despliega en Vercel**
-2. **Prueba ambos idiomas**
-3. **Personaliza las traducciones**
-4. **Agrega más idiomas si es necesario**
-5. **Configura un dominio personalizado**
-
-¡Tu portafolio multiidioma está listo para el mundo! 🌍
-
+1. Desplegar en Vercel y probar `/`, `/en`, `/es` y una página en `projects/`.
+2. Mantener paridad de claves entre los dos JSON del idioma activo (`en-v{N}.json` y `es-v{N}.json`) en cada cambio de copy.
+3. Opcional: dominio personalizado en el panel de Vercel.
