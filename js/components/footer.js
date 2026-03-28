@@ -13,7 +13,7 @@ class AppFooter extends HTMLElement {
       <div class="container">
         <a href="${homeHref}" class="logo" id="principal-logo">A_A</a>
         <p class="text" data-i18n="footer.copyright">
-          &copy; Copyright 2024. Developed with ❤️ by Andres Araque
+          &copy; Copyright 2026. Developed with ❤️ by Andres Araque
         </p>
         <ul class="social-media">
           <li>
