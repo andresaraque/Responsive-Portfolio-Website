@@ -164,28 +164,23 @@ modal_overlay.addEventListener("click", (event) => {
 });
 
 prev_btn.addEventListener("click", () => {
-  console.log("currentIndex prev: ", currentIndex);
-  if (currentIndex === 0) {
-    currentIndex = 1;
-  } else {
-    currentIndex--;
-  }
+  currentIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1;
   changeImage(currentIndex);
 });
 
 next_btn.addEventListener("click", () => {
-  console.log("currentIndex next: ", currentIndex);
-  if (currentIndex === 2) {
-    currentIndex = 0;
-  } else {
-    currentIndex++;
-  }
+  currentIndex = currentIndex === images.length - 1 ? 0 : currentIndex + 1;
   changeImage(currentIndex);
 });
 
+document.querySelector(".images").addEventListener("click", (event) => {
+  const img = event.target.closest("img[data-href]");
+  if (img) {
+    window.location.href = img.dataset.href;
+  }
+});
+
 function changeImage(index) {
-  console.log("te current index real: ", index);
   images.forEach((img) => img.classList.remove("show-image"));
-  console.log(images[index]);
   images[index].classList.add("show-image");
 }

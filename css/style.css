@@ -310,6 +310,8 @@ nav.container {
 }
 
 .btn.secondary-btn {
+  height: min-content;
+  width: fit-content;
   position: relative;
   background-color: transparent;
   color: var(--main-color-1);
@@ -899,6 +901,7 @@ nav.container {
 
 .slider-wrap img.show-image {
   display: block;
+  cursor: pointer;
 }
 
 .portfolio.open-modal .modal {

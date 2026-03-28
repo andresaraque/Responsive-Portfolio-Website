@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -36,20 +36,22 @@
     <main>
       <div class="container">
         <section class="section">
-          <h1 class="heading title-pj" data-i18n="project.pj4.companyTitle">
-            LingoMate
-          </h1>
+
+          <div class="project-page-header">
+            <span class="company-label" data-i18n="project.pj4.companyTitle">LingoMate</span>
+            <h1 class="title-pj" data-i18n="project.pj4.title">Emma — AI English Tutor</h1>
+          </div>
+
           <div class="wrapper-project">
+
             <div class="container-img">
               <img
-                src="../assets/branding-og-emma.jpg"
+                src="./../assets/branding-og-emma.jpg"
                 alt="Emma AI English Tutor — LingoMate"
               />
             </div>
+
             <div class="project-info">
-              <h1 class="heading" data-i18n="project.pj4.title">
-                Emma — AI English Tutor
-              </h1>
               <p class="text" data-i18n="project.pj4.description">
                 I designed and built Emma, an AI-powered English tutor that
                 lives inside Telegram. Users can practice English through text
@@ -57,14 +59,7 @@
                 powered by large language models.
               </p>
 
-              <div
-                style="
-                  display: flex;
-                  gap: 1rem;
-                  flex-wrap: wrap;
-                  margin-top: 1rem;
-                "
-              >
+              <div class="btn-group">
                 <a
                   class="btn primary-btn padding-all"
                   target="_blank"
@@ -83,7 +78,7 @@
                 >
               </div>
 
-              <div class="text" style="margin-top: 1.5rem">
+              <div class="feature-list">
                 <p data-i18n="project.pj4.feature1">
                   * Text &amp; voice interaction: users can chat in writing or
                   send audio messages; voice input is transcribed by AWS
@@ -117,75 +112,77 @@
                 </p>
               </div>
 
-              <h3 class="sub-heading" data-i18n="project.common.technologies">
-                technologies:
-              </h3>
-              <img
-                src="https://img.shields.io/badge/TypeScript-171f21?style=flat&logo=typescript"
-                alt="Badge of TypeScript"
-              />
-              <img
-                src="https://img.shields.io/badge/Node.js-171f21?style=flat&logo=node.js"
-                alt="Badge of Node.js"
-              />
-              <img
-                src="https://img.shields.io/badge/Telegram%20Bot%20API-171f21?style=flat&logo=telegram"
-                alt="Badge of Telegram Bot API"
-              />
-              <img
-                src="https://img.shields.io/badge/AWS%20CDK-171f21?style=flat&logo=amazonwebservices&logoColor=%23FF9900"
-                alt="Badge of AWS CDK"
-              />
+              <div class="tech-section">
+                <h3 class="sub-heading" data-i18n="project.common.technologies">technologies:</h3>
+                <div class="badge-group">
+                  <img
+                    src="https://img.shields.io/badge/TypeScript-171f21?style=flat&logo=typescript"
+                    alt="Badge of TypeScript"
+                  />
+                  <img
+                    src="https://img.shields.io/badge/Node.js-171f21?style=flat&logo=node.js"
+                    alt="Badge of Node.js"
+                  />
+                  <img
+                    src="https://img.shields.io/badge/Telegram%20Bot%20API-171f21?style=flat&logo=telegram"
+                    alt="Badge of Telegram Bot API"
+                  />
+                  <img
+                    src="https://img.shields.io/badge/AWS%20CDK-171f21?style=flat&logo=amazonwebservices&logoColor=%23FF9900"
+                    alt="Badge of AWS CDK"
+                  />
+                </div>
+              </div>
 
-              <h3
-                class="sub-heading"
-                style="margin-top: 2.5rem"
-                data-i18n="project.common.awsServices"
-              >
-                AWS Services:
-              </h3>
-              <img
-                src="https://img.shields.io/badge/Amazon%20Bedrock%20(Nova)-171f21?style=flat&logo=amazonwebservices&logoColor=%23FF9900"
-                alt="Badge of Amazon Bedrock"
-              />
-              <img
-                src="https://img.shields.io/badge/AWS%20Step%20Functions-171f21?style=flat&logo=amazonsimpleemailservice&logoColor=%23FF9900"
-                alt="Badge of AWS Step Functions"
-              />
-              <img
-                src="https://img.shields.io/badge/AWS%20Lambda-171f21?style=flat&logo=awslambda"
-                alt="Badge of AWS Lambda"
-              />
-              <img
-                src="https://img.shields.io/badge/Amazon%20DynamoDB-171f21?style=flat&logo=amazondynamodb"
-                alt="Badge of Amazon DynamoDB"
-              />
-              <img
-                src="https://img.shields.io/badge/Amazon%20API%20Gateway-171f21?style=flat&logo=amazonwebservices&logoColor=%23FF9900"
-                alt="Badge of Amazon API Gateway"
-              />
-              <img
-                src="https://img.shields.io/badge/Amazon%20Transcribe%20(Whisper)-171f21?style=flat&logo=amazonwebservices&logoColor=%23FF9900"
-                alt="Badge of Amazon Transcribe"
-              />
-              <img
-                src="https://img.shields.io/badge/Amazon%20Polly%20(TTS)-171f21?style=flat&logo=amazonwebservices&logoColor=%23FF9900"
-                alt="Badge of Amazon Polly"
-              />
-              <img
-                src="https://img.shields.io/badge/Amazon%20EventBridge-171f21?style=flat&logo=amazonwebservices&logoColor=%23FF9900"
-                alt="Badge of Amazon EventBridge"
-              />
-              <img
-                src="https://img.shields.io/badge/AWS%20Secrets%20Manager-171f21?style=flat&logo=amazonwebservices&logoColor=%23FF9900"
-                alt="Badge of AWS Secrets Manager"
-              />
-              <img
-                src="https://img.shields.io/badge/Amazon%20S3-171f21?style=flat&logo=amazons3"
-                alt="Badge of Amazon S3"
-              />
+              <div class="tech-section">
+                <h3 class="sub-heading" data-i18n="project.common.awsServices">AWS Services:</h3>
+                <div class="badge-group">
+                  <img
+                    src="https://img.shields.io/badge/Amazon%20Bedrock%20(Nova)-171f21?style=flat&logo=amazonwebservices&logoColor=%23FF9900"
+                    alt="Badge of Amazon Bedrock"
+                  />
+                  <img
+                    src="https://img.shields.io/badge/AWS%20Step%20Functions-171f21?style=flat&logo=amazonsimpleemailservice&logoColor=%23FF9900"
+                    alt="Badge of AWS Step Functions"
+                  />
+                  <img
+                    src="https://img.shields.io/badge/AWS%20Lambda-171f21?style=flat&logo=awslambda"
+                    alt="Badge of AWS Lambda"
+                  />
+                  <img
+                    src="https://img.shields.io/badge/Amazon%20DynamoDB-171f21?style=flat&logo=amazondynamodb"
+                    alt="Badge of Amazon DynamoDB"
+                  />
+                  <img
+                    src="https://img.shields.io/badge/Amazon%20API%20Gateway-171f21?style=flat&logo=amazonwebservices&logoColor=%23FF9900"
+                    alt="Badge of Amazon API Gateway"
+                  />
+                  <img
+                    src="https://img.shields.io/badge/Amazon%20Transcribe%20(Whisper)-171f21?style=flat&logo=amazonwebservices&logoColor=%23FF9900"
+                    alt="Badge of Amazon Transcribe"
+                  />
+                  <img
+                    src="https://img.shields.io/badge/Amazon%20Polly%20(TTS)-171f21?style=flat&logo=amazonwebservices&logoColor=%23FF9900"
+                    alt="Badge of Amazon Polly"
+                  />
+                  <img
+                    src="https://img.shields.io/badge/Amazon%20EventBridge-171f21?style=flat&logo=amazonwebservices&logoColor=%23FF9900"
+                    alt="Badge of Amazon EventBridge"
+                  />
+                  <img
+                    src="https://img.shields.io/badge/AWS%20Secrets%20Manager-171f21?style=flat&logo=amazonwebservices&logoColor=%23FF9900"
+                    alt="Badge of AWS Secrets Manager"
+                  />
+                  <img
+                    src="https://img.shields.io/badge/Amazon%20S3-171f21?style=flat&logo=amazons3"
+                    alt="Badge of Amazon S3"
+                  />
+                </div>
+              </div>
+
             </div>
           </div>
+
         </section>
       </div>
     </main>
